@@ -1,0 +1,16 @@
+name: .NET checks
+on:
+  pull_request:
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+      - run: dotnet test LedgerAudit.Tests/LedgerAudit.Tests.csproj --configuration Release --nologo
+      - run: dotnet publish LedgerAudit.Api/LedgerAudit.Api.csproj --configuration Release --output /tmp/ledger-audit-publish --nologo

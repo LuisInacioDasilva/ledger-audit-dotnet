@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#07121e"><title>Ledger Audit / Console</title>
+  <link rel="stylesheet" href="/style.css"><script src="/app.js" defer></script>
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <header class="top"><div class="brand"><span class="mark">LA<span>.</span></span><span>LEDGER <b>AUDIT</b><small>DOUBLE-ENTRY ENGINE</small></span></div><div class="topright"><span class="pulse"></span> LEDGER ONLINE <span id="clock"></span></div></header>
+  <main>
+    <section class="hero"><div><p class="eyebrow">01 / FINANCIAL OPERATIONS</p><h1>Every entry has<br><em>another side.</em></h1><p class="intro">Um laboratório de lançamentos de dupla entrada, trilha append-only e idempotência. Valores inteiros, regras explícitas e replay verificável.</p><div class="hero-actions"><a href="#entries">EXPLORAR LANÇAMENTOS <span>↗</span></a><span>ASP.NET CORE 10 / C#</span></div></div><div class="orb" aria-hidden="true"><div class="orbit orbit-a"></div><div class="orbit orbit-b"></div><div class="core">Σ</div><span class="node n1">+</span><span class="node n2">−</span><span class="node n3">=</span></div></section>
+    <section class="metrics"><article><span>01 / EVENTS</span><strong id="eventCount">—</strong><small>Lançamentos confirmados</small></article><article><span>02 / ACCOUNTS</span><strong id="accountCount">—</strong><small>Contas com movimento</small></article><article><span>03 / CHECK</span><strong id="integrity">—</strong><small>Soma de saldos (unidades mínimas)</small></article></section>
+    <section id="entries" class="workspace"><div class="section-head"><div><p class="eyebrow">02 / AUDIT TRAIL</p><h2>Últimos lançamentos</h2></div><div class="status"><span class="pulse"></span><span id="sync">Sincronizando</span></div></div><div class="table-wrap"><table><thead><tr><th>IDENTIFICADOR</th><th>DATA</th><th>DESCRIÇÃO</th><th>LINHAS</th><th>STATUS</th></tr></thead><tbody id="entryRows"><tr><td colspan="5" class="empty">Carregando lançamentos...</td></tr></tbody></table></div></section>
+    <section class="accounts"><div class="section-head"><div><p class="eyebrow">03 / POSITION</p><h2>Saldos por conta</h2></div><span class="hint">EM UNIDADES MÍNIMAS</span></div><div id="balanceRows" class="balance-grid"></div></section>
+    <footer>LEDGER AUDIT <span>Protótipo técnico · dados simulados, não use como razão contábil de produção.</span><a href="https://github.com/LuisInacioDasilva">LUIS DA SILVA ↗</a></footer>
+  </main>
+</body>
+</html>
