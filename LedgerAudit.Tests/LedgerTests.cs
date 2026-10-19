@@ -53,7 +53,7 @@ public sealed class LedgerTests
         {
             var store = new LedgerStore(path);
             var results = await Task.WhenAll(Enumerable.Range(0, 24).Select(_ => Task.Run(() => store.Post(Entry()))));
-            Assert.Single(results.Where(result => result == PostResult.Created));
+            Assert.Single(results, result => result == PostResult.Created);
             Assert.Equal(23, results.Count(result => result == PostResult.Duplicate));
             Assert.Single(File.ReadAllLines(path));
         }
