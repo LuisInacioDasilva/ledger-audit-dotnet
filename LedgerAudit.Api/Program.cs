@@ -14,7 +14,7 @@ var app = builder.Build();
 
 app.Use(async (context, next) => {
     context.Response.Headers["X-Content-Type-Options"] = "nosniff";
-    context.Response.Headers["Content-Security-Policy"] = "default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self'; base-uri 'none'; frame-ancestors 'none'";
+    context.Response.Headers["Content-Security-Policy"] = "default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self'; base-uri 'none'; frame-ancestors 'none'";
     await next(context);
 });
 app.UseDefaultFiles();
